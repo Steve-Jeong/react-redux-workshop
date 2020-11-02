@@ -25,9 +25,6 @@ class App extends Component {
     if(this.props.mode === 'UPDATE') {
       article = <UpdateContainer></UpdateContainer>
     }
-    if(this.props.mode === 'DELETE') {
-      article = <ReadContainer></ReadContainer>
-    }
 
     return (
       <div className="App">

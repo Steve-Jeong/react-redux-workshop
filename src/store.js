@@ -62,8 +62,18 @@ function reducer(state=initState, action) {
       selected_content_id:id
     }
   }
-  if(action.type === 'DELETE') {
-    return {...state, mode:'DELETE'}
+  if(action.type === 'DELETE_PROCESS') {
+    if(!window.confirm('Really delete?')) {return state}
+    newContents = state.contents.filter(function(li){
+      if(state.selected_content_id === li.id) return false
+      else return true
+    })
+    
+    return {
+      ...state, 
+      mode:'WELCOME',
+      contents:newContents
+    }
   }
 
   return state
