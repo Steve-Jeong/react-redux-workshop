@@ -5,6 +5,7 @@ import NavContainer from './containers/Nav'
 import ReadContainer from './containers/Read'
 import ControlContainer from './containers/Control'
 import CreateContainer from './containers/Create'
+import UpdateContainer from './containers/Update'
 import { connect } from 'react-redux';
 
 
@@ -22,7 +23,7 @@ class App extends Component {
       article = <CreateContainer></CreateContainer>
     }
     if(this.props.mode === 'UPDATE') {
-      article = <ReadContainer></ReadContainer>
+      article = <UpdateContainer></UpdateContainer>
     }
     if(this.props.mode === 'DELETE') {
       article = <ReadContainer></ReadContainer>
